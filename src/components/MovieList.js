@@ -37,4 +37,4 @@ const mapState = state => {
     }
 } 
 
-export default connect(mapState)(MovieList);
+export default connect(mapState, )(MovieList);
