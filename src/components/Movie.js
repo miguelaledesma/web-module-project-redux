@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux'
+import { deleteMovie } from '../actions/movieActions';
 
 const Movie = (props) => {
     const { id } = useParams();
@@ -8,6 +9,11 @@ const Movie = (props) => {
 
     const { movies } = props;
     const movie = movies.find(movie=>movie.id===Number(id));
+
+    const deleteMovieHandler = (id) => {
+        console.log(id)
+        props.deleteMovie(id)
+    }
     
     return(<div className="modal-page col">
         <div className="modal-dialog">
